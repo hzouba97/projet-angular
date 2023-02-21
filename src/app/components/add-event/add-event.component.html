@@ -1,20 +1,21 @@
-<h2> Add Event</h2>
+<h2 class="title"> Add Event</h2>
 
 <div class="form">
 
-  <div>
-    <label for="title"> title </label>
-    <input id="title" type="text" [(ngModel)]="event.title" name="title">
+  <div style="width:18rem" class="m-4">
+  <div class="input-group mb-3">
+    <label class="input-group-text" for="title"> Title </label>
+    <input type="text" [(ngModel)]="event.title" name="title" class="form-control">
   </div>
 
-  <div>
-    <label for="time"> Time </label>
-    <input type="time" id="time" name="time" [(ngModel)]="event.time">
+  <div class="input-group mb-3">
+    <label class="input-group-text" for="time"> Time </label>
+    <input type="time" name="time" [(ngModel)]="event.time" class="form-control">
   </div>
 
-  <div class="col">
-    <a>type </a>
-    <select [(ngModel)]="event.type">
+  <div class="input-group mb-3">
+    <label class="input-group-text" for="time"> Type </label>
+    <select [(ngModel)]="event.type" name="type" class="form-control">
       <option>Routine</option>
       <option>Repas</option>
       <option>Travail</option>
@@ -24,7 +25,7 @@
 
 
   <div>
-    <button type="button" (click)="addEvent()"> Ajouter </button>
+    <button class="btn btn-primary" type="button" (click)="addEvent()"> Ajouter </button>
   </div>
-
+</div>
 </div>

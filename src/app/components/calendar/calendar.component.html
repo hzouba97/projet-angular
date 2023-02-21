@@ -1,12 +1,26 @@
-
+<div class="container d-flex flex-wrap align-items-center">
 <div *ngFor="let events of events">
+<div class="card m-2" style="width: 18rem;">
+  <div class="card-body">
 
-  <div> Id : {{events.id}}</div>
-  <div> title : {{events.title}}</div>
-  <div> time : {{events.time}}</div>
-  <div> type : {{events.type}}</div>
-<!--  <div><button (click)="onEditEvent()">Modifier l'événement</button></div>-->
-  <button (click)="onDeleteEvent(events.id)">Supprimer l'événement</button>
 
-  <p></p>
+<div> <label class="form-label"> Id </label>  : {{events.id}}</div>
+  <div> <label class="form-label"> Title </label> : {{events.title}} </div>
+  <div> <label class="form-label"> Time </label> : {{events.time}}</div>
+  <div> <label class="form-label"> Type </label> : {{events.type}}</div>
+
+  <div class="btn-group" >
+
+  <button class="btn btn-primary" (click)="onEditEvent(events)">Modifier l'événement</button>
+  <button class="btn btn-danger" (click)="onDeleteEvent(events.id)">Supprimer l'événement</button>
+
+
+  </div>
+
+</div>
+
+</div>
+
+</div>
+
 </div>

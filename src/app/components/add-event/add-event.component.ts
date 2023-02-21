@@ -1,30 +1,38 @@
 import {Component} from '@angular/core';
 import {EventsService} from "../../services/events.service";
-import {Router} from "@angular/router";
-
+import {Router,ActivatedRoute} from "@angular/router";
 @Component({
   selector: 'app-add-event',
   templateUrl: './add-event.component.html',
   styleUrls: ['./add-event.component.css']
 })
-export class AddEventComponent  {
 
+
+export class AddEventComponent  {
   event = {
     id: '',
     title: '',
     time: '',
     type: '',
   };
+  constructor(private eventService:EventsService, private router: Router,private route: ActivatedRoute,) {}
+  
 
-  constructor(private eventService:EventsService, private router: Router) {
+  ngOnInit() {
+    const ID = this.route.snapshot.paramMap.get('id');
+    if(ID){
+      console.log("ID")
+    }
+    else{
+      console.log("NO ID") 
+    }
+  }
+  addEvent(){
+    this.eventService
+      .createEvents(this.event)
   }
 
- addEvent(){
-   this.eventService
-     .createEvents(this.event)
-     .subscribe(ok => alert("Event ajoute"))
-   this.router.navigate(['/events']);
- }
+
 
 
 }

@@ -30,6 +30,10 @@ export class CalendarComponent implements OnInit {
     location.reload();
   }
 
+  onEditEvent(event:any){
+    this.router.navigate(['events/add/'+event.id])
+  }
+
 
 
 }
