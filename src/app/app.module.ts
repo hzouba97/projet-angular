@@ -5,15 +5,15 @@ import { AppComponent } from './app.component';
 import { CalendarComponent } from './components/calendar/calendar.component';
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
-import { FormComponent } from './components/form/form.component';
 import { AddEventComponent } from './components/add-event/add-event.component';
+import {MatSelectModule} from "@angular/material/select";
+
 
 
 @NgModule({
   declarations: [
     AppComponent,
     CalendarComponent,
-    FormComponent,
     AddEventComponent,
   ],
   imports: [
@@ -21,7 +21,8 @@ import { AddEventComponent } from './components/add-event/add-event.component';
     AppRoutingModule,
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

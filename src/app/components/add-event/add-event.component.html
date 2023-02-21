@@ -17,10 +17,16 @@
     <input id="time" type="text" [(ngModel)]="event.time" name="time">
   </div>
 
-  <div>
-    <label for="type"> type </label>
-    <input id="type" type="text" [(ngModel)]="event.type" name="type">
+  <div class="col">
+    <a>type </a>
+    <select [(ngModel)]="event.type">
+      <option>Routine</option>
+      <option>Repas</option>
+      <option>Travail</option>
+      <option>Loisir</option>
+    </select>
   </div>
+
 
   <div>
     <button type="button" (click)="addEvent()"> Ajouter </button>

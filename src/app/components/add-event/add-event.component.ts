@@ -1,5 +1,6 @@
 import {Component} from '@angular/core';
 import {EventsService} from "../../services/events.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-add-event',
@@ -15,13 +16,14 @@ export class AddEventComponent  {
     type: '',
   };
 
-  constructor(private eventService:EventsService) {
+  constructor(private eventService:EventsService, private router: Router) {
   }
 
  addEvent(){
    this.eventService
      .createEvents(this.event)
      .subscribe(ok => alert("Event ajoute"))
+   this.router.navigate(['/calendar']);
  }
 
 }
