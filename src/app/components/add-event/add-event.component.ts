@@ -10,6 +10,7 @@ import {Router} from "@angular/router";
 export class AddEventComponent  {
 
   event = {
+    id: '',
     title: '',
     time: '',
     type: '',
@@ -22,7 +23,7 @@ export class AddEventComponent  {
    this.eventService
      .createEvents(this.event)
      .subscribe(ok => alert("Event ajoute"))
-   this.router.navigate(['/calendar']);
+   this.router.navigate(['/events']);
  }
 
 
