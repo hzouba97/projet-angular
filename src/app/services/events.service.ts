@@ -14,4 +14,10 @@ export class EventsService {
     return this.http.get<Events[]>('http://localhost:3000/events');
   }
 
+  createEvents(createEvents: any):Observable<void>{
+    return this.http.post<void>('http://localhost:3000/events',createEvents);
+  }
+
+
+
 }
