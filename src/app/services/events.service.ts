@@ -18,6 +18,18 @@ export class EventsService {
     return this.http.post<void>('http://localhost:3000/events',createEvents);
   }
 
+  deleteEvent(id: number): Observable<any> {
+    const url = `http://localhost:3000/events/${id}`;
+    return this.http.delete(url);
+  }
+
+  updateEvent(event: Event): Observable<any> {
+    const url = `http://localhost:3000/events/${id}`;
+    return this.http.put(url, event);
+  }
+
+
+
 
 
 }

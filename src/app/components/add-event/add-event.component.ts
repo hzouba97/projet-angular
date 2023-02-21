@@ -26,4 +26,5 @@ export class AddEventComponent  {
    this.router.navigate(['/calendar']);
  }
 
+
 }

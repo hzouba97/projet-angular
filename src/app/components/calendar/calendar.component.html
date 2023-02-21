@@ -4,5 +4,8 @@
   <div> title : {{events.title}}</div>
   <div> time : {{events.time}}</div>
   <div> type : {{events.type}}</div>
+  <button (click)="onEditEvent(events.id)">Modifier l'événement</button>
+  <button (click)="onDeleteEvent(events.id)">Supprimer l'événement</button>
+
   <p></p>
 </div>

@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Events} from "../../models/events";
 import {EventsService} from "../../services/events.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-calendar',
@@ -11,7 +12,7 @@ export class CalendarComponent implements OnInit {
 
   events?: Events[];
 
-  constructor(private eventsService: EventsService) {
+  constructor(private eventsService: EventsService, private router: Router) {
   }
 
   ngOnInit(): void{
@@ -22,5 +23,13 @@ export class CalendarComponent implements OnInit {
           this.events = data;
         });
   }
+
+  onDeleteEvent(id: number) {
+    this.eventsService.deleteEvent(id)
+      .subscribe(ok => alert("Event supprime"))
+    location.reload();
+  }
+
+
 
 }
