@@ -1,10 +1,11 @@
+
 <div *ngFor="let events of events">
 
   <div> Id : {{events.id}}</div>
   <div> title : {{events.title}}</div>
   <div> time : {{events.time}}</div>
   <div> type : {{events.type}}</div>
-  <button (click)="onEditEvent(events.id)">Modifier l'événement</button>
+  <div><button (click)="onEditEvent()">Modifier l'événement</button></div>
   <button (click)="onDeleteEvent(events.id)">Supprimer l'événement</button>
 
   <p></p>

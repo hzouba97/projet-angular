@@ -9,7 +9,6 @@ import { AddEventComponent } from './components/add-event/add-event.component';
 import {MatSelectModule} from "@angular/material/select";
 
 
-
 @NgModule({
   declarations: [
     AppComponent,

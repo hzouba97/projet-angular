@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Events} from "../models/events";
-import {Observable} from "rxjs";
+import {catchError, Observable} from "rxjs";
 
 @Injectable({
   providedIn: 'root'
@@ -23,10 +23,6 @@ export class EventsService {
     return this.http.delete(url);
   }
 
-  updateEvent(event: Event): Observable<any> {
-    const url = `http://localhost:3000/events/${id}`;
-    return this.http.put(url, event);
-  }
 
 
 
